@@ -7,7 +7,7 @@ function collectItemData() {
       .querySelector(".page-title > h1")
       ?.textContent.match(/(.*)\((\d+)\).*/);
 
-    let data: { [key: string]: any } = {
+    let data = {
       isLoggedIn: (!document.querySelector("#login-link")).toString(),
       isAdmin: (!!document.querySelector("i.icon-speedometer")).toString(),
     };
