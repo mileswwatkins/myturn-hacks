@@ -8,5 +8,5 @@ DIRS=(
 )
 
 for dir in "${DIRS[@]}"; do
-    cat "$dir/"*.ts | yarn esbuild --sourcemap --minify --target=es2015 --bundle --outfile="dist/$dir.js"
+    yarn esbuild --sourcemap --minify --target=es2015 --bundle --outfile="dist/$dir.js" "./$dir"
 done
