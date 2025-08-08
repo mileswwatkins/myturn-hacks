@@ -46,3 +46,4 @@ function clearWarning() {
 }
 
 document.addEventListener("DOMContentLoaded", clearWarning);
+console.log("clear ID checks");
