@@ -1,0 +1,46 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  # This workflow will run on every push to the main branch
+  push:
+    branches:
+      - main
+  # It can also be triggered manually from the "Actions" tab
+  workflow_dispatch:
+
+# Allow only one concurrent deployment, skipping runs queued between the start and end of a previous run.
+# This ensures that only the latest commit gets deployed.
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout your repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Install dependencies
+        run: yarn
+
+      - name: Run build script
+        run: sh ./build.sh
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          # The dist/ directory will be uploaded as the artifact
+          path: "dist/"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
