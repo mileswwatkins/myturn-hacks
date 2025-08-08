@@ -13,3 +13,6 @@ These scripts are subsequently included in MyTurn.
 
 Simply edit one of the scripts. Commits to the `main` branch will kick off a
 pipeline that bundles them and updates the GitHub Pages site.
+
+If you create a new script, you'll need to add it to the `index.ts` entrypoint
+for the directory.
