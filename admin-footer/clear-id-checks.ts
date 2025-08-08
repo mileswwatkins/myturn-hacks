@@ -45,4 +45,4 @@ function clearWarning() {
   warning.append(button);
 }
 
-addEventListener("load", clearWarning);
+document.addEventListener("DOMContentLoaded", clearWarning);
