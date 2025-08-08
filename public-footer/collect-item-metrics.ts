@@ -1,3 +1,10 @@
+import { posthog } from "posthog-js";
+
+posthog.init("phc_BgkM7UzoKyZHYF1CPzTpmIc6IyRzoQ87Gi8GEW9na1W", {
+  api_host: "https://us.i.posthog.com",
+  defaults: "2025-05-24",
+});
+
 function collectItemData() {
   try {
     const itemMatches = window.location.pathname.match(
