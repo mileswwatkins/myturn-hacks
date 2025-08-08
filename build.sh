@@ -1,9 +1,7 @@
 #! /usr/bin/env bash
 
 DIRS=(
-    public-header
     public-footer
-    admin-header
     admin-footer
 )
 
