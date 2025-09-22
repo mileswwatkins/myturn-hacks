@@ -1,7 +1,7 @@
 import { posthog } from "posthog-js";
 
 posthog.init("phc_BgkM7UzoKyZHYF1CPzTpmIc6IyRzoQ87Gi8GEW9na1W", {
-  api_host: "https://us.i.posthog.com",
+  api_host: "https://boop.sustainablecapitolhill.org",
   defaults: "2025-05-24",
 });
 
@@ -14,7 +14,7 @@ function collectItemData() {
       .querySelector(".page-title > h1")
       ?.textContent.match(/(.*)\((\d+)\).*/);
 
-    let data = {
+    let data: { [key: string]: string | undefined } = {
       isLoggedIn: (!document.querySelector("#login-link")).toString(),
       isAdmin: (!!document.querySelector("i.icon-speedometer")).toString(),
     };
