@@ -87,6 +87,7 @@ function collectItemData() {
         button.style.backgroundColor = 'green';
 
         button.style.color = 'white';
+        button.disabled = true;
       };
 
       messageBox.append(button);
