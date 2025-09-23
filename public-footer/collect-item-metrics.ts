@@ -65,6 +65,7 @@ function collectItemData() {
       ?.textContent?.includes("In Stock");
 
     if (!inStock) {
+
       const messageBox = document.createElement("div");
       messageBox.classList.add("alert", "alert-warning");
 
@@ -81,6 +82,11 @@ function collectItemData() {
 
       button.onclick = function () {
         posthog.capture("unavailable button clicked", data);
+        button.textContent = 'Thank you for letting us know!';
+
+        button.style.backgroundColor = 'green';
+
+        button.style.color = 'white';
       };
 
       messageBox.append(button);
